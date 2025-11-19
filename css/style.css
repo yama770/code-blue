@@ -4,14 +4,21 @@
     --sub-color02:#6F6FEE;
     --accent-color:#FFFA76;
     --text-color:#333333;
+    --white:#FFFFFF;
 }
 
 /* 共通装飾 */
 html{
     width: 100%;
-    font-size: 62.5%;
+    font-size: 0.695vw;
     font-family: 'Noto Sans JP', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: var(--text-color);
+}
+
+@media screen and (max-width:768px) {
+    html{
+        font-size: clamp(8px, 2.67vw, 10px);
+    }
 }
 
 body{
@@ -19,30 +26,6 @@ body{
     font-size: 100%;
     line-height: 1.5;
     letter-spacing: 0.03em;
-}
-
-.pc{
-    display: inherit;
-}
-
-.sp{
-    display: none;
-}
-
-@media screen and (max-width:767px) {
-    .pc{
-        display: none;
-    }
-    
-    .sp{
-        display: inherit;
-    }
-}
-
-.container{
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 8rem;
 }
 
 a{
@@ -61,7 +44,181 @@ li{
     list-style: none;
 }
 
+.pc{
+    display: inherit;
+}
+
+.sp{
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .pc{
+        display: none;
+    }
+    
+    .sp{
+        display: inherit;
+    }
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.inner { 
+    padding: 0 5.6%;
+}
+
+@media screen and (max-width:768px) {
+    .inner { 
+        padding: 0 2rem;
+    }
+}
+
 /* ボタン */
+.btn {
+    position: relative;
+    display: inline-block;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn--primary {
+    padding: 2rem 6rem 2rem 3rem;
+    border-radius: 9999px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: var(--accent-color);
+}
+
+.btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background: url('../images/icon-arrow-right.svg') no-repeat center center;
+    background-size: contain;
+    transform: translateY(-50%);
+}
 
 
 /* ヘッダー */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10rem;
+}
+
+.header__logo {
+    height: 6rem;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.4rem;
+    height: 6rem;
+    padding-left: 1rem;
+}
+
+.header__nav-list {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.header__nav-item {
+    font-size: 1.6rem;
+}
+
+.header__nav-btn {
+    flex-shrink: 0;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    display: none;
+    position: relative;
+    width: 3rem;
+    height: 2.4rem;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.3rem;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+/* アクティブ時（×印） */
+.hamburger.active span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+}
+
+@media screen and (max-width:768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .header__nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 10rem 4rem 2rem;
+        background: var(--white);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .header__nav.active {
+        right: 0;
+    }
+    
+    .header__nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+    }
+    
+    .header__nav-item {
+        font-size: 1.8rem;
+    }
+}
