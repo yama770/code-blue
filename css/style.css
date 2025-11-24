@@ -141,7 +141,7 @@ li{
     right: 2rem;
     width: 3rem;
     height: 3rem;
-    background: url('../images/icon-arrow-right.svg') no-repeat center center;
+    background: url(../img/icon-pointer.png) no-repeat center center;
     background-size: contain;
     transform: translateY(-50%);
 }
@@ -219,7 +219,12 @@ li{
 }
 
 .header__logo {
-    height: 6rem;
+    width: 18rem;
+}
+
+.header__logo a {
+    display: block;
+    height: 100%;
 }
 
 .header__nav {
@@ -295,6 +300,11 @@ li{
     .header {
         height: 6rem;
     }
+    
+    .header__logo {
+        width: 12rem;
+    }
+
     .hamburger {
         display: block;
     }
@@ -637,5 +647,54 @@ li{
 
     .teacher__item-description {
         font-size: 1.4rem;
+    }
+}
+
+/* フッター */
+.footer {
+    padding: 4rem 0 2rem;
+    background: var(--sub-color02);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer__nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer__nav-item a {
+    color: var(--white);
+    font-size: 1.4rem;
+}
+
+.footer__nav-item a:hover {
+    opacity: 0.7;
+}
+
+.footer__copyright {
+    font-size: 1.2rem;
+    color: var(--white);
+}
+
+@media screen and (max-width:768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer__nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer__nav-item a {
+        font-size: 1.2rem;
+    }
+
+    .footer__copyright {
+        font-size: 1rem;
     }
 }
