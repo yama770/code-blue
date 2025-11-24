@@ -12,7 +12,7 @@
 }
 
 /* 共通装飾 */
-html{
+html {
     width: 100%;
     font-size: 0.695vw;
     font-family: 'Noto Sans JP', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -20,63 +20,64 @@ html{
 }
 
 @media screen and (max-width:768px) {
-    html{
+    html {
         font-size: clamp(8px, 2.67vw, 10px);
     }
 }
 
-body{
+body {
     width: 100%;
     font-size: 100%;
     line-height: 1.5;
     letter-spacing: 0.03em;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--text-color);
     transition: opacity .2s;
 }
 
-img, picture{
+img,
+picture {
     max-width: 100%;
     height: auto;
     vertical-align: bottom;
 }
 
-li{
+li {
     list-style: none;
 }
 
-.pc{
+.pc {
     display: inherit;
 }
 
-.sp{
+.sp {
     display: none;
 }
 
 @media screen and (max-width:768px) {
-    .pc{
+    .pc {
         display: none;
     }
-    
-    .sp{
+
+    .sp {
         display: inherit;
     }
 }
 
-.container{
+.container {
     max-width: 1440px;
     margin: 0 auto;
 }
 
-.inner { 
+.inner {
     padding: 0 5.6%;
 }
 
 @media screen and (max-width:768px) {
-    .inner { 
+    .inner {
         padding: 0 2rem;
     }
 }
@@ -308,7 +309,7 @@ li{
     .hamburger {
         display: block;
     }
-    
+
     .header__nav {
         position: fixed;
         top: 0;
@@ -322,17 +323,17 @@ li{
         transition: right 0.3s ease;
         z-index: 1000;
     }
-    
+
     .header__nav.active {
         right: 0;
     }
-    
+
     .header__nav-list {
         flex-direction: column;
         width: 100%;
         gap: 2rem;
     }
-    
+
     .header__nav-item {
         font-size: 1.8rem;
     }
@@ -696,5 +697,296 @@ li{
 
     .footer__copyright {
         font-size: 1rem;
+
+/* Pronaviが選ばれる３つの理由 */
+
+#reason h3 {
+    font-size: clamp(1.8rem, 1.577rem + 1.803vw, 3.2rem);
+    margin-bottom: 2rem;
+}
+
+#reason h3>span {
+    font-size: clamp(2rem, 1.577rem + 1.803vw, 3.2rem);
+    margin-right: .8rem;
+
+}
+
+#reason h4 {
+    font-size: clamp(1.4rem, 1.118rem + 1.202vw, 2.2rem);
+    ;
+}
+
+#reason p {
+    font-size: clamp(1.2rem, 1.059rem + 0.601vw, 1.6rem);
+    ;
+}
+
+#reason ol>li {
+    display: flex;
+    justify-content: space-between;
+    gap: 6%;
+    margin-bottom: clamp(5rem, 3.944rem + 4.507vw, 8rem);
+    ;
+}
+
+#reason .reason__left {
+    width: 30%;
+}
+
+#reason .reason__right {
+    width: 64%;
+}
+
+#reason .reason__right>ul>li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+#reason .reason__right_img {
+    width: 10%;
+}
+
+@media screen and (max-width:768px) {
+    #reason ol>li {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #reason .reason__left,
+    #reason .reason__right {
+        width: 100%;
+    }
+}
+
+/* 卒業生の実績 */
+
+#achievements {
+    text-align: center;
+}
+
+.slick-slide {
+    margin: 0 1rem;
+}
+
+.slick-slide li {
+    width: 250px;
+}
+
+.slick-box>ul>li {
+    margin-left: 15px;
+}
+
+#pick_up {
+    padding: 100px 0 50px;
+}
+
+
+.slide-items .slick-slide {
+    width: 25rem !important;
+}
+
+.button {
+    font-size: clamp(1.6rem, 1.318rem + 1.202vw, 2.4rem);
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #455FC1;
+    box-shadow: 0px 7px 2px -1px rgba(0, 0, 0, .4);
+    border-radius: 7px;
+    outline: none;
+    padding: 10px 84px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+    margin-top: clamp(2.5rem, 1.268rem + 5.258vw, 6rem);
+}
+
+.button:hover {
+    background-color: #7b8edc;
+
+}
+
+
+@media screen and (max-width:768px) {
+    .slide-items .slick-slide {
+        width: 28rem !important;
+    }
+
+    .button {
+        padding: 1rem 5rem;
+    }
+}
+
+
+
+/* 卒業生の声 */
+
+#review {
+    margin-bottom: 8rem;
+}
+
+#review .slick-slide {
+    margin: 0;
+}
+
+.review__more-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-right: 2rem;
+    /* ▶︎ の分の余白 */
+    display: block;
+    text-align: right;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    margin-top: 5rem;
+}
+
+.review__more-link:hover {
+    color: #707070;
+}
+
+.review__more-link::after {
+    content: "▶︎";
+    /* 表示する三角 */
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* よくある質問 */
+
+#faq h3 {
+    font-size: clamp(1.2rem, 1.059rem + 0.601vw, 1.6rem);
+}
+
+
+
+#faq p {
+    font-size: clamp(1.2rem, 1.059rem + 0.601vw, 1.4rem);
+    margin-right: 2rem;
+}
+
+#faq .title p {
+    background-color: var(--sub-color01);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*アコーディオン全体*/
+.accordion-area {
+    list-style: none;
+    width: 96%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-area li {
+    margin: 2rem 0;
+    border-radius: 9999px;
+    background-color: #F5F5F5;
+}
+
+.accordion-area li.open {
+    border-radius: 5rem;
+}
+
+
+/*アコーディオンタイトル*/
+.title {
+    position: relative;
+    /*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 2% 3%;
+    transition: all .5s ease;
+    display: flex;
+    align-items: center;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+
+}
+
+.title::before {
+    top: 48%;
+    right: 30px;
+    transform: rotate(0deg);
+
+}
+
+.title::after {
+    top: 48%;
+    right: 30px;
+    transform: rotate(90deg);
+
+}
+
+/*　closeというクラスがついたら形状変化　*/
+.title.close::before {
+    transform: rotate(45deg);
+}
+
+.title.close::after {
+    transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+    display: none;
+    /*はじめは非表示*/
+    margin: 0 3% 3% 6%;
+    padding: 0 1% 3%;
+}
+
+@media screen and (max-width:768px) {
+    #faq h3 {
+        width: 70%;
+    }
+
+    #faq p {
+        font-size: 1.2rem;
+    }
+
+    .title::before {
+        right: 2rem;
+    }
+
+    .title::after {
+        right: 2rem;
+    }
+
+    .box p {
+        margin-bottom: 3%;
+        margin-left: 3%;
+    }
+
+    .accordion-area li {
+        margin: 1.6rem 0;
+    }
+
+    .accordion-area li.open {
+        border-radius: 2.5rem;
     }
 }
