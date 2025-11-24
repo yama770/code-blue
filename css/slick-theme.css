@@ -1,13 +1,12 @@
 @charset 'UTF-8';
+
 /* Slider */
-.slick-loading .slick-list
-{
+.slick-loading .slick-list {
     background: #fff url('./ajax-loader.gif') center center no-repeat;
 }
 
 /* Icons */
-@font-face
-{
+@font-face {
     font-family: 'slick';
     font-weight: normal;
     font-style: normal;
@@ -15,10 +14,10 @@
     src: url('./fonts/slick.eot');
     src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
 }
+
 /* Arrows */
 .slick-prev,
-.slick-next
-{
+.slick-next {
     font-size: 0;
     line-height: 0;
 
@@ -28,8 +27,8 @@
 
     display: block;
 
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -37,47 +36,48 @@
 
     cursor: pointer;
 
-    color: #cc0110;
-    border-top: 1px solid #cc0110;
-    border-right: 1px solid #cc0110;
+    color: #4b4b4b;
+    border-top: 3px solid #4b4b4b74;
+    border-right: 3px solid #4b4b4b74;
     outline: none;
     background: transparent;
 }
-.slick-next{
+
+.slick-next {
     -webkit-transform: translate(0, -50%)rotate(45deg);
     -ms-transform: translate(0, -50%)rotate(45deg);
     transform: translate(0, -50%)rotate(45deg);
 }
-.slick-prev{
+
+.slick-prev {
     -webkit-transform: translate(0, -50%)rotate(225deg);
     -ms-transform: translate(0, -50%)rotate(225deg);
     transform: translate(0, -50%)rotate(225deg);
 }
+
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
-.slick-next:focus
-{
+.slick-next:focus {
     color: transparent;
     outline: none;
     background: transparent;
 }
+
 .slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
-.slick-next:focus:before
-{
+.slick-next:focus:before {
     opacity: 1;
 }
+
 .slick-prev.slick-disabled:before,
-.slick-next.slick-disabled:before
-{
+.slick-next.slick-disabled:before {
     opacity: .25;
 }
 
 .slick-prev:before,
-.slick-next:before
-{
+.slick-next:before {
     font-family: 'slick';
     font-size: 20px;
     line-height: 1;
@@ -89,50 +89,46 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.slick-prev
-{
-    left: 0.6rem;
+.slick-prev {
+    left: -1rem;
 }
-[dir='rtl'] .slick-prev
-{
+
+[dir='rtl'] .slick-prev {
     right: -25px;
     left: auto;
 }
-.slick-prev:before
-{
+
+/* .slick-prev:before {
     content: '←';
 }
-[dir='rtl'] .slick-prev:before
-{
+
+[dir='rtl'] .slick-prev:before {
     content: '→';
+} */
+
+.slick-next {
+    right: -1rem;
 }
 
-.slick-next
-{
-    right: 0.6rem;
-}
-[dir='rtl'] .slick-next
-{
+[dir='rtl'] .slick-next {
     right: auto;
     left: -25px;
 }
-.slick-next:before
-{
+
+/* .slick-next:before {
     content: '→';
 }
-[dir='rtl'] .slick-next:before
-{
+
+[dir='rtl'] .slick-next:before {
     content: '←';
-}
+} */
 
 /* Dots */
-.slick-dotted.slick-slider
-{
+.slick-dotted.slick-slider {
     margin-bottom: 30px;
 }
 
-.slick-dots
-{
+.slick-dots {
     position: absolute;
     bottom: -25px;
 
@@ -146,8 +142,8 @@
 
     text-align: center;
 }
-.slick-dots li
-{
+
+.slick-dots li {
     position: relative;
 
     display: inline-block;
@@ -159,8 +155,8 @@
 
     cursor: pointer;
 }
-.slick-dots li button
-{
+
+.slick-dots li button {
     font-size: 0;
     line-height: 0;
 
@@ -177,21 +173,21 @@
     outline: none;
     background: transparent;
 }
+
 .slick-dots li button:hover,
-.slick-dots li button:focus
-{
+.slick-dots li button:focus {
     outline: none;
 }
+
 .slick-dots li button:hover:before,
-.slick-dots li button:focus:before
-{
+.slick-dots li button:focus:before {
     opacity: 1;
 }
-.slick-dots li button:before
-{
+
+.slick-dots li button:before {
     font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
+    font-size: 5rem;
+    line-height: 3rem;
 
     position: absolute;
     top: 0;
@@ -204,13 +200,13 @@
     text-align: center;
 
     opacity: .25;
-    color: black;
+    color: rgb(34, 34, 34);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.slick-dots li.slick-active button:before
-{
+
+.slick-dots li.slick-active button:before {
     opacity: .75;
-    color: black;
+    color: rgb(34, 34, 34);
 }
