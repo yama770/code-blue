@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>卒業生の声 - CODE BLUE</title>
+    <link rel="icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/review.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header inner">
+            <h1 class="header__logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="pronavi ロゴ" />
+                </a>
+            </h1>
+
+            <button class="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="index.html#">スクールの特徴</a></li>
+                    <li class="header__nav-item"><a href="index.html#achievements">卒業生の作品</a></li>
+                    <li class="header__nav-item"><a href="index.html#">学習の流れ</a></li>
+                    <li class="header__nav-item"><a href="index.html#reason">選ばれる理由</a></li>
+                    <li class="header__nav-item"><a href="index.html#">料金プラン</a></li>
+                    <li class="header__nav-item"><a href="index.html#">講師紹介</a></li>
+                    <li class="header__nav-item"><a href="index.html#faq">よくある質問</a></li>
+                </ul>
+
+                <div class="header__nav-btn">
+                    <a href="#" class="btn btn--primary">無料カウンセリング</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="review-page inner">
+                <h2 class="section-title">卒業生の声</h2>
+
+                <div class="review-page__grid">
+                    <div class="review-page__item" data-review="1">
+                        <img src="./img/review_1.webp" alt="30代前半|2023年5月入会。1対1指導と同行支援で案件運用を習得しました。M.M">
+                    </div>
+                    <div class="review-page__item" data-review="2">
+                        <img src="./img/review_2.webp" alt="20代前半|2023年8月入会。仲間に支えられ成長、新しい職種と価値観に出会えた。M.H">
+                    </div>
+                    <div class="review-page__item" data-review="3">
+                        <img src="./img/review_3.webp" alt="20代後半|2022年6月入会。マンツーマン指導と課題で実力が伸びたと実感しています。N.Y">
+                    </div>
+                    <div class="review-page__item" data-review="1">
+                        <img src="./img/review_1.webp" alt="30代前半|2023年5月入会。1対1指導と同行支援で案件運用を習得しました。M.M">
+                    </div>
+                    <div class="review-page__item" data-review="2">
+                        <img src="./img/review_2.webp" alt="20代前半|2023年8月入会。仲間に支えられ成長、新しい職種と価値観に出会えた。M.H">
+                    </div>
+                    <div class="review-page__item" data-review="3">
+                        <img src="./img/review_3.webp" alt="20代後半|2022年6月入会。マンツーマン指導と課題で実力が伸びたと実感しています。N.Y">
+                    </div>
+                    <div class="review-page__item" data-review="1">
+                        <img src="./img/review_1.webp" alt="30代前半|2023年5月入会。1対1指導と同行支援で案件運用を習得しました。M.M">
+                    </div>
+                    <div class="review-page__item" data-review="2">
+                        <img src="./img/review_2.webp" alt="20代前半|2023年8月入会。仲間に支えられ成長、新しい職種と価値観に出会えた。M.H">
+                    </div>
+                    <div class="review-page__item" data-review="3">
+                        <img src="./img/review_3.webp" alt="20代後半|2022年6月入会。マンツーマン指導と課題で実力が伸びたと実感しています。N.Y">
+                    </div>
+                </div>
+
+                <a href="index.html#review" class="back-link">← トップページに戻る</a>
+            </section>
+
+            <!-- モーダルウィンドウ -->
+            <div id="reviewModal" class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <button class="modal__close">&times;</button>
+                    <div class="modal__body">
+                        <div class="modal__header">
+                            <img id="modalImage" src="" alt="">
+                        </div>
+                        <div class="modal__details">
+                            <div class="modal__info">
+                                <span class="modal__age" id="modalAge"></span>
+                                <span class="modal__date" id="modalDate"></span>
+                            </div>
+                            <h3 class="modal__title" id="modalTitle"></h3>
+                            <div class="modal__text" id="modalText"></div>
+                            <div class="modal__name" id="modalName"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer inner">
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item">
+                        <a href="#">特定商取引法に基づく表記</a>
+                    </li>
+                    <li class="footer__nav-item">
+                        <a href="#">プライバシーポリシー</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <p class="footer__copyright">
+                &copy; 2024 CODE BLUE. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/review.js"></script>
+</body>
+
+</html>
