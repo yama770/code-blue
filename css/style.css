@@ -6,7 +6,7 @@
     --sub-color02: #6F6FEE;
     --accent-color: #FFFA76;
     --text-color: #333333;
-    --white: #FFFFFF;
+    --white: #F9F9F9;
     --gradient-main: linear-gradient(to right, var(--sub-color01) 12%, var(--main-color) 58%);
     --gradient-yellow: linear-gradient(to right, #E8DC73 24%, #FFFDE3 62%, #FFF563 89%);
 }
@@ -209,6 +209,11 @@ li {
     background: url(../img/icon-pointer.png) no-repeat center center;
     background-size: contain;
     transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.btn--primary:hover::before {
+    top: 40%;
 }
 
 /* CTAボタン */
@@ -244,13 +249,48 @@ li {
 }
 
 .btn--cta {
-    display: inline-block;
-    padding: 3.6rem 4.8rem;
-    border-radius: 9999px;
-    font-size: 3.2rem;
-    font-weight: bold;
     background: var(--gradient-yellow);
     box-shadow: 1rem 0.8rem 2rem rgba(0, 0, 0, 0.5);
+    border-radius: 9999px;
+    color: #fff;
+    display: inline-block;
+    overflow: hidden;
+    padding: 3.6rem 4.8rem;
+    position: relative;
+    text-decoration: none;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #000;
+    transition: .3s;
+}
+
+.btn--cta::after {
+    animation: 2s 0s shine linear infinite;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 25%, rgba(255, 255, 255, .6) 50%, rgba(255, 255, 255, 0) 75%);
+    content: '';
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-15deg);
+    width: 100%;
+}
+
+.btn--cta:hover {
+    box-shadow: unset;
+    transform: translateY(4px);
+
+}
+
+
+@keyframes shine {
+    20% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -281,6 +321,12 @@ li {
     align-items: center;
     justify-content: space-between;
     height: 10rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1920px;
+    background-color: #F9F9F9;
+    z-index: 99;
 }
 
 .header__logo {
@@ -681,8 +727,8 @@ li {
     }
 
     .process__step {
-    padding: 0;
-}
+        padding: 0;
+    }
 
     .process__step-icon {
         width: 5.5rem;
@@ -705,21 +751,22 @@ li {
     }
 
     .process__step-box h4 {
-    font-size: 1.6rem;
-    margin-bottom: 1.2rem;
-}
+        font-size: 1.6rem;
+        margin-bottom: 1.2rem;
+    }
 
-.process__step-box p {
-    font-size: 1.2rem;
-}
+    .process__step-box p {
+        font-size: 1.2rem;
+    }
 
-.process__step-icon>p,.process__step-icon>p>span {
-    font-size: 1.2rem;
-}
+    .process__step-icon>p,
+    .process__step-icon>p>span {
+        font-size: 1.2rem;
+    }
 
-.process__step-icon>p {
-    padding-top: 1.4rem;
-}
+    .process__step-icon>p {
+        padding-top: 1.4rem;
+    }
 
 }
 
@@ -732,6 +779,7 @@ li {
     background: url(../img/fv__bg.png) no-repeat center center/cover;
     padding: 0;
     margin-bottom: 4rem;
+    margin-top: 10rem;
 }
 
 .fv__img--left {
@@ -1109,16 +1157,19 @@ li {
 
 #reason ol>li {
     display: flex;
-    justify-content: space-between;
-    gap: 6%;
+    justify-content: center;
+    gap: 4%;
+    margin-bottom: 3rem;
 }
 
 #reason .reason__left {
     width: 30%;
+    margin-left: 4rem;
 }
 
 #reason .reason__right {
-    width: 64%;
+    width: 55%;
+    padding-top: 2rem;
 }
 
 #reason .reason__right>ul>li {
@@ -1186,12 +1237,13 @@ li {
     outline: none;
     padding: 10px 84px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     margin-top: clamp(2.5rem, 1.268rem + 5.258vw, 6rem);
+    transition: .3s;
 }
 
 .button:hover {
-    background-color: #7b8edc;
+    transform: translateY(4px);
+    box-shadow: unset;
 }
 
 

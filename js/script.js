@@ -28,22 +28,22 @@ document.addEventListener('click', (e) => {
 
 //よくある質問
 
-$('.accordion-area .title').on('click', function() {
+$('.accordion-area .title').on('click', function () {
     var findElm = $(this).next(".box"); // クリックしたボックス
-    
+
     // 他の開いているアコーディオンを閉じる
     $('.accordion-area .box').not(findElm).slideUp().removeClass('open');
     $('.accordion-area .title').not(this).removeClass('close');
 
     // クリックしたものは開閉
-    findElm.slideToggle(300, function() {
+    findElm.slideToggle(300, function () {
         if ($(this).is(':visible')) {
             $(this).addClass('open');
         } else {
             $(this).removeClass('open');
         }
     });
-    
+
     $(this).toggleClass('close');
 });
 
@@ -97,3 +97,25 @@ $('.review__slider').slick({
         }
     ]
 });
+
+
+$(function () {
+    /*=================================================
+    スムーススクロール
+    ===================================================*/
+    // ページ内のリンクをクリックした時に動作する
+    $('a[href^="#"]').click(function () {
+        // クリックしたaタグのリンクを取得
+        let href = $(this).attr("href");
+        // ジャンプ先のid名をセット hrefの中身が#もしくは空欄なら,htmlタグをセット
+        let target = $(href == "#" || href == "" ? "html" : href);
+        // ページトップからジャンプ先の要素までの距離を取得
+        let position = target.offset().top;
+        // animateでスムーススクロールを行う   ページトップからpositionだけスクロールする
+        // 600はスクロール速度で単位はミリ秒  swingはイージングのひとつ
+        $("html, body").animate({ scrollTop: position }, 400, "swing");
+        // urlが変化しないようにfalseを返す
+        return false;
+    });
+});
+
