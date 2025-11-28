@@ -48,24 +48,20 @@ $('.accordion-area .title').on('click', function() {
 });
 
 
-
-
-
 //卒業生の実績 スライダー
-
-$(".slide-items").slick({
+const slickSettings = {
     speed: 15000,
     autoplaySpeed: 0,
     autoplay: true,
     cssEase: "linear",
-    slidesToShow: 1,        // ← ここが最重要
+    slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
     arrows: false,
     pauseOnHover: false,
     pauseOnFocus: false,
     centerMode: false,
-    variableWidth: true,    // ← 幅を自分で決める
+    variableWidth: true,
 
     responsive: [
         {
@@ -75,13 +71,22 @@ $(".slide-items").slick({
             }
         }
     ]
+};
+
+$(".slide-items").slick(slickSettings);
+
+// ウィンドウリサイズ時に再初期化
+let resizeTimer;
+$(window).on('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        $('.slide-items').slick('unslick');  // 一度破棄
+        $('.slide-items').slick(slickSettings);  // 再初期化
+    }, 100);  // リサイズ完了後100ms待ってから実行
 });
 
 
-
-
 //卒業生の声 スライダー
-
 $('.review__slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
