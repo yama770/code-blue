@@ -13,80 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:wght@100..900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-        .review-page {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .review-page__title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #333;
-        }
-
-        .review-page__grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .review-page__item {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .review-page__item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .review-page__item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .review-page__title {
-                font-size: 1.8rem;
-                margin-bottom: 40px;
-            }
-
-            .review-page__grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .review-page__grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 60px;
-            color: #0066cc;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="css/review.css" />
 </head>
 
 <body>
@@ -123,40 +50,62 @@
 
         <main>
             <section class="review-page inner">
-                <h1 class="review-page__title">卒業生の声</h1>
+                <h2 class="section-title">卒業生の声</h2>
 
                 <div class="review-page__grid">
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="1">
                         <img src="./img/review_1.webp" alt="30代前半|2023年5月入会。1対1指導と同行支援で案件運用を習得しました。M.M">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="2">
                         <img src="./img/review_2.webp" alt="20代前半|2023年8月入会。仲間に支えられ成長、新しい職種と価値観に出会えた。M.H">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="3">
                         <img src="./img/review_3.webp" alt="20代後半|2022年6月入会。マンツーマン指導と課題で実力が伸びたと実感しています。N.Y">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="1">
                         <img src="./img/review_1.webp" alt="30代前半|2023年5月入会。1対1指導と同行支援で案件運用を習得しました。M.M">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="2">
                         <img src="./img/review_2.webp" alt="20代前半|2023年8月入会。仲間に支えられ成長、新しい職種と価値観に出会えた。M.H">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="3">
                         <img src="./img/review_3.webp" alt="20代後半|2022年6月入会。マンツーマン指導と課題で実力が伸びたと実感しています。N.Y">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="1">
                         <img src="./img/review_1.webp" alt="30代前半|2023年5月入会。1対1指導と同行支援で案件運用を習得しました。M.M">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="2">
                         <img src="./img/review_2.webp" alt="20代前半|2023年8月入会。仲間に支えられ成長、新しい職種と価値観に出会えた。M.H">
                     </div>
-                    <div class="review-page__item">
+                    <div class="review-page__item" data-review="3">
                         <img src="./img/review_3.webp" alt="20代後半|2022年6月入会。マンツーマン指導と課題で実力が伸びたと実感しています。N.Y">
                     </div>
                 </div>
 
                 <a href="index.html#review" class="back-link">← トップページに戻る</a>
             </section>
+
+            <!-- モーダルウィンドウ -->
+            <div id="reviewModal" class="modal">
+                <div class="modal__overlay"></div>
+                <div class="modal__content">
+                    <button class="modal__close">&times;</button>
+                    <div class="modal__body">
+                        <div class="modal__header">
+                            <img id="modalImage" src="" alt="">
+                        </div>
+                        <div class="modal__details">
+                            <div class="modal__info">
+                                <span class="modal__age" id="modalAge"></span>
+                                <span class="modal__date" id="modalDate"></span>
+                            </div>
+                            <h3 class="modal__title" id="modalTitle"></h3>
+                            <div class="modal__text" id="modalText"></div>
+                            <div class="modal__name" id="modalName"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer inner">
@@ -179,6 +128,7 @@
 
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/review.js"></script>
 </body>
 
 </html>

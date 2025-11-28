@@ -496,7 +496,6 @@ li {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    padding: 1.5rem;
     border-radius: 1rem;
 }
 
@@ -1053,27 +1052,27 @@ li {
 /* Pronaviが選ばれる３つの理由 */
 
 #reason h3 {
-    font-size: clamp(1.8rem, 1.577rem + 1.803vw, 3.2rem);
+    font-size: 3.2rem;
     margin-bottom: 2rem;
 }
 
 #reason h3>span {
-    font-size: clamp(2rem, 1.577rem + 1.803vw, 3.2rem);
     margin-right: .8rem;
 }
 
 #reason h4 {
-    font-size: clamp(1.4rem, 1.118rem + 1.202vw, 2.2rem);
+    font-size: 2rem;
 }
 
 #reason p {
-    font-size: clamp(1.2rem, 1.059rem + 0.601vw, 1.6rem);
+    font-size: 1.6rem;
 }
 
 #reason ol>li {
     display: flex;
     justify-content: space-between;
     gap: 6%;
+    margin-bottom: 3.2rem;
 }
 
 #reason .reason__left {
@@ -1095,14 +1094,32 @@ li {
 }
 
 @media screen and (max-width:768px) {
+    #reason h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    #reason h4 {
+        font-size: 1.6rem;
+    }
+
+    #reason p {
+        font-size: 1.4rem;
+    }
+
     #reason ol>li {
         flex-direction: column;
         width: 100%;
     }
 
-    #reason .reason__left,
+    #reason .reason__left {
+        width: 80%;
+        margin: 0 auto;
+    }
+
     #reason .reason__right {
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
