@@ -1,6 +1,7 @@
 .review-page {
     padding: 5rem 0;
-    background: #f8f9fa;
+    background: var(--white);
+    margin-top: 10rem;
 }
 
 .review-page__grid {
@@ -33,6 +34,12 @@
 }
 
 @media (max-width: 768px) {
+
+.review-page {
+    margin-top: 6rem;
+    padding: 1rem;
+}
+
     .review-page__grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
